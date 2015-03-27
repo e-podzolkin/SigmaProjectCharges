@@ -1,0 +1,39 @@
+﻿@model BL.AccountModels.ActivationModel
+
+@{
+    var confirmemailtitle = Resx.AccountStrings.confirmemailtitle;
+    ViewBag.Title = confirmemailtitle;
+    var confirmemailbutton = Resx.AccountStrings.confirmemailbutton;
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        
+    <div class="form-horizontal">
+        <h3>@confirmemailtitle</h3>
+        <hr />
+        @Resx.AccountStrings.text1 "@Html.DisplayFor(model => model.Login)" @Resx.AccountStrings.text2 "@confirmemailbutton".
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.UserID)
+        @Html.HiddenFor(model => model.LastName)
+        @Html.HiddenFor(model => model.FirstName)
+        @Html.HiddenFor(model => model.MiddleName)
+        @Html.HiddenFor(model => model.Mail)
+        @Html.HiddenFor(model => model.Login)
+        @Html.HiddenFor(model => model.Password)
+        @Html.HiddenFor(model => model.Comment)
+        @Html.HiddenFor(model => model.PhoneNumber)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@confirmemailbutton" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,19 @@
+﻿@{
+    var logout = Resx.SharedStrings.logout;
+    var register = Resx.SharedStrings.register;
+    var login = Resx.SharedStrings.login;
+ }
+
+<div>
+    @if (Request.IsAuthenticated)
+    {
+        @Html.ActionLink(User.Identity.Name, "Index", "Account")
+        @Html.ActionLink(logout, "Logout", "Account")
+    }
+    else
+    {
+        @Html.ActionLink(register, "Register", "Account")
+        <span>|</span>
+        @Html.ActionLink(login, "Login", "Account")
+    }
+</div>

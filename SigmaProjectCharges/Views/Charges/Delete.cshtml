@@ -1,0 +1,77 @@
+﻿@model BL.ChargesModels.ChargesDelete
+
+@{
+    var titledelete = Resx.ChargesStrings.titledelete;
+    ViewBag.Title = titledelete;
+}
+
+<h1>@titledelete</h1>
+
+<h3>@Html.Encode(Resx.ChargesStrings.confirmdeletion)</h3>
+<fieldset>
+    <legend>Charges</legend>
+
+    <div class="display-label">
+         № платежа:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChargesID)
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.paymenttype:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PaymentType)
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.sum:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AmountOfPayment)
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.date:
+    </div>
+    <div class="display-field">
+        @Model.Date.ToString("dd.MM.yyy")
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.description:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CharactOfPayment)
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.surnameaccountableperson:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.nameaccountableperson:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Resx.ChargesStrings.patronymicaccountableperson:
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MiddleName)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="@Resx.ChargesStrings.deletebutton" /> |
+        @Html.ActionLink(Resx.HomeStrings.backtolist, "Index", "Charges")
+    </p>
+}

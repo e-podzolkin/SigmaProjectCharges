@@ -1,0 +1,17 @@
+D:\Project\SigmaProjectCharges\BL\bin\Debug\BL.dll
+D:\Project\SigmaProjectCharges\BL\bin\Debug\BL.pdb
+D:\Project\SigmaProjectCharges\BL\bin\Debug\DAL.dll
+D:\Project\SigmaProjectCharges\BL\bin\Debug\EntityFramework.dll
+D:\Project\SigmaProjectCharges\BL\bin\Debug\DAL.pdb
+D:\Project\SigmaProjectCharges\BL\bin\Debug\EntityFramework.xml
+D:\Project\SigmaProjectCharges\BL\bin\Debug\ru\EntityFramework.resources.dll
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.dll
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.pdb
+D:\Project\SigmaProjectCharges\BL\bin\Debug\en\BL.resources.dll
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.csproj.GenerateResource.Cache
+D:\Project\SigmaProjectCharges\BL\obj\Debug\en\BL.resources.dll
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.Resources.Account.Account.resources
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.Resources.Charges.Charges.resources
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.Resources.Account.Account.en.resources
+D:\Project\SigmaProjectCharges\BL\obj\Debug\BL.Resources.Charges.Charges.en.resources

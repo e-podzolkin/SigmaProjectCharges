@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BL.ChargesModels.ChargesInfo>
+
+@{
+    var titleindex = Resx.ChargesStrings.titleindex;
+    ViewBag.Title = titleindex;
+    var paymenttype = Resx.ChargesStrings.paymenttype;
+    var date = Resx.ChargesStrings.date;
+    var lmf = Resx.ChargesStrings.lmf;
+    var add = Resx.ChargesStrings.add;
+    var edit = Resx.ChargesStrings.edit;
+    var delete = Resx.ChargesStrings.detele;
+}
+
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/datepicker")
+}
+
+
+<br />
+<table>
+    <tr>
+        <td>
+            №
+        </td>
+        <td>                
+            @Html.ActionLink(paymenttype, "Index", "Charges", new { OrderBy = 2 }, "")
+        </td>
+        <td>
+            @Html.Encode(Resx.ChargesStrings.sum)
+        </td>
+        <td>
+            @Html.ActionLink(date, "Index", "Charges", new { OrderBy = 3 }, "")
+        </td>
+        <td>
+            @Html.Encode(Resx.ChargesStrings.description)
+        </td>
+        <td>
+            @Html.ActionLink(lmf, "Index", "Charges", new { OrderBy = 1 }, "")
+        </td>
+        <td>
+            @Html.ActionLink(add, "Create", "Charges")
+        </td>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChargesID)
+        </td>
+        <td>                
+            @Html.DisplayFor(modelItem => item.PaymentType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountOfPayment)
+        </td>
+        <td>
+            @item.Date.ToString("dd.MM.yyy")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CharactOfPayment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LFMName)
+        </td>
+        <td>
+            @Html.ActionLink(edit, "Edit", "Charges", new {id = item.ChargesID}, "")
+            <br />------------<br />
+            @Html.ActionLink(delete, "Delete", "Charges", new {id = item.ChargesID}, "")
+        </td>
+    </tr>
+}
+</table>
+<br />
+<br />
+@Html.Encode(Resx.ChargesStrings.searchinfo)
+@Html.Partial("_Search", Model.FirstOrDefault())
+<br />
+@Html.Partial("_SearchDate", Model.FirstOrDefault())

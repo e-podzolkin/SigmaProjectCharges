@@ -1,0 +1,27 @@
+﻿@model BL.ChargesModels.ChargesInfo
+
+@{
+    var searchbutton = Resx.ChargesStrings.searchbutton;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Search)
+                @Html.ValidationMessageFor(model => model.Search)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@searchbutton" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

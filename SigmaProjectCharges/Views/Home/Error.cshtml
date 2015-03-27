@@ -1,0 +1,9 @@
+﻿@{
+    var errorpage = Resx.HomeStrings.errorpage;
+    var accesserror = Resx.HomeStrings.accesserror;
+    var backtolist = Resx.HomeStrings.backtolist;
+    ViewBag.Title = errorpage;
+}
+
+<h2>@Html.Encode(accesserror)</h2>
+@Html.ActionLink(backtolist, "Index", "Charges")
